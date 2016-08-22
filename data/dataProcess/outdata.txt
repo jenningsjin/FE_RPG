@@ -1,0 +1,972 @@
+#
+Class
+HP
+S/M
+Skill
+Speed
+Luck
+Def
+Res
+Con
+Move
+Weapon Ranks
+
+Lord (Lyn)
+16
+4
+7
+9
+0
+2
+0
+5
+5
+ D
+
+
+Lord (Eliwood)
+18
+5
+5
+7
+0
+5
+0
+7
+5
+ D
+
+
+Lord (Hector)
+19
+7
+4
+5
+0
+8
+0
+13
+5
+ D
+
+
+Blade Lord
+18
+3
+3
+4
+0
+5
+0
+6
+6
+ D,  D
+
+
+Knight Lord
+18
+3
+3
+4
+0
+5
+0
+9
+7
+ D,  D
+
+
+Great Lord
+18
+3
+3
+4
+0
+5
+0
+15
+5
+ D,  D
+
+
+Dancer
+14
+1
+2
+7
+0
+0
+1
+4
+5
+&#8211;
+
+
+Bard
+14
+1
+2
+7
+0
+1
+0
+3
+5
+&#8211;
+
+
+Prince
+10
+0
+0
+0
+0
+0
+0
+7
+5
+ A
+
+
+Transporter (Tent)
+15
+0
+3
+3
+0
+3
+0
+25
+0
+&#8211;
+
+
+Transporter (Wagon)
+15
+0
+3
+3
+0
+3
+0
+25
+5
+&#8211;
+
+
+Soldier
+20
+3
+0
+1
+0
+0
+0
+6
+5
+ E
+
+
+Cavalier (M)
+20
+5
+2
+5
+0
+6
+0
+9
+7
+ E,  E
+
+
+Cavalier (F)
+18
+5
+3
+3
+0
+6
+0
+9
+7
+ D,  E
+
+
+Paladin (M)
+23
+7
+4
+7
+0
+8
+3
+11
+8
+ D,  D,  E
+
+
+Paladin (F)
+23
+6
+6
+11
+0
+7
+6
+9
+8
+ D,  D,  E
+
+
+Knight (M)
+17
+5
+2
+0
+0
+9
+0
+13
+4
+ D
+
+
+Knight (F)
+16
+4
+3
+1
+0
+8
+1
+10
+4
+ D
+
+
+General (M)
+21
+8
+4
+3
+0
+13
+3
+15
+5
+ C,  E
+
+
+General (F)
+20
+8
+5
+5
+0
+11
+4
+11
+5
+ C,  E
+
+
+Mercenary (M)
+18
+4
+8
+8
+0
+4
+0
+9
+5
+ D
+
+
+Class
+HP
+S/M
+Skl
+Spd
+Lck
+Def
+Res
+Con
+Mov
+Weapons
+
+
+Mercenary (F)
+16
+3
+5
+6
+0
+2
+0
+8
+5
+ D
+
+
+Hero (M)
+22
+6
+9
+10
+0
+8
+2
+10
+6
+ C,  E
+
+
+Hero (F)
+22
+6
+10
+11
+0
+6
+3
+9
+6
+ C,  E
+
+
+Myrmidon (M)
+16
+4
+9
+9
+0
+2
+0
+8
+5
+ D
+
+
+Myrmidon (F)
+15
+3
+9
+10
+0
+1
+1
+5
+5
+ D
+
+
+Swordmaster (M)
+21
+6
+11
+10
+0
+5
+2
+9
+6
+ C
+
+
+Swordmaster (F)
+19
+6
+11
+12
+0
+4
+3
+7
+6
+ C
+
+
+Thief (M)
+16
+3
+1
+9
+0
+2
+0
+6
+6
+ E
+
+
+Thief (F)
+15
+2
+3
+8
+0
+1
+2
+5
+6
+ E
+
+
+Assassin
+16
+3
+1
+9
+0
+2
+0
+6
+6
+ E
+
+
+Archer (M)
+18
+4
+3
+3
+0
+3
+0
+7
+5
+ D
+
+
+Archer (F)
+17
+3
+3
+4
+0
+3
+0
+5
+5
+ D
+
+
+Sniper (M)
+21
+7
+6
+5
+0
+5
+2
+8
+6
+ C
+
+
+Sniper (F)
+19
+6
+6
+7
+0
+5
+3
+6
+6
+ C
+
+
+Nomad (M)
+16
+5
+4
+5
+0
+4
+0
+7
+7
+ D
+
+
+Nomad (F)
+15
+4
+5
+6
+0
+3
+0
+5
+7
+ D
+
+
+Nmd Trooper (M)
+21
+7
+6
+7
+0
+6
+3
+8
+8
+ E,  C
+
+
+Nmd Trooper (F)
+21
+6
+6
+7
+0
+5
+4
+6
+8
+ E,  C
+
+
+Wyvern Rider (M)
+20
+7
+3
+5
+0
+8
+0
+10
+7
+ D
+
+
+Wyvern Rider (F)
+19
+6
+5
+5
+0
+7
+0
+9
+7
+ D
+
+
+Class
+HP
+S/M
+Skl
+Spd
+Lck
+Def
+Res
+Con
+Mov
+Weapons
+
+
+Wyvern Lord (M)
+25
+9
+5
+7
+0
+10
+1
+11
+8
+ E,  C
+
+
+Wyvern Lord (F)
+24
+8
+7
+7
+0
+9
+2
+10
+8
+ E,  C
+
+
+Mage (M)
+16
+1
+2
+3
+0
+3
+3
+6
+5
+ D
+
+
+Mage (F)
+16
+1
+3
+2
+0
+2
+4
+3
+5
+ D
+
+
+Sage (M)
+20
+5
+4
+4
+0
+5
+5
+7
+6
+ C,  E
+
+
+Sage (F)
+19
+4
+6
+5
+0
+3
+6
+4
+6
+ C,  E
+
+
+Sage (Limstella)
+19
+4
+6
+5
+0
+3
+6
+7
+6
+ C,  E
+
+
+Monk
+18
+1
+1
+2
+0
+1
+5
+6
+5
+ E
+
+
+Cleric
+16
+1
+2
+2
+0
+0
+6
+4
+5
+ D
+
+
+Bishop (M)
+21
+4
+4
+4
+0
+3
+8
+7
+6
+ D,  C
+
+
+Bishop (F)
+19
+4
+5
+4
+0
+2
+9
+5
+6
+ D,  C
+
+
+Shaman (M)
+16
+2
+1
+2
+0
+2
+4
+7
+5
+ D
+
+
+Shaman (F)
+15
+3
+1
+1
+0
+1
+5
+3
+5
+ D
+
+
+Druid (M)
+19
+6
+3
+4
+0
+4
+6
+8
+6
+ C,  E
+
+
+Druid (F)
+17
+7
+3
+4
+0
+3
+7
+4
+6
+ C,  E
+
+
+Fighter
+20
+5
+2
+4
+0
+2
+0
+11
+5
+ D
+
+
+Warrior
+28
+8
+5
+6
+0
+5
+0
+13
+6
+ C,  E
+
+
+Brigand
+20
+5
+1
+5
+0
+3
+0
+12
+5
+ D
+
+
+Pirate
+19
+4
+2
+6
+0
+3
+0
+10
+5
+ D
+
+
+Corsair
+19
+4
+2
+6
+0
+3
+0
+10
+5
+ D
+
+
+Class
+HP
+S/M
+Skl
+Spd
+Lck
+Def
+Res
+Con
+Mov
+Weapons
+
+
+Berserker
+24
+7
+6
+7
+0
+6
+0
+13
+6
+ C
+
+
+Pegasus Knight
+14
+4
+5
+5
+0
+3
+2
+5
+7
+ D
+
+
+Falcoknight
+20
+6
+7
+7
+0
+5
+4
+6
+8
+ E,  C
+
+
+Troubadour
+15
+1
+1
+3
+0
+2
+5
+5
+7
+ D
+
+
+Valkyrie
+19
+4
+3
+5
+0
+4
+8
+6
+8
+ E,  C
+
+
+Magic Seal
+50
+0
+0
+24
+0
+13
+0
+7
+6
+&#8211;
+
+
+Archsage
+40
+30
+24
+20
+0
+20
+28
+9
+6
+ S,  S,  S,  S
+
+
+Dark Druid
+75
+30
+18
+15
+0
+28
+30
+10
+6
+ S,  S,  S,  S
+
+
+Bramimond
+35
+30
+25
+19
+0
+18
+30
+6
+5
+&#8211;
+
+
+Fire Dragon
+120
+17
+25
+15
+0
+20
+20
+25
+8
