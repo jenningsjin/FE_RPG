@@ -3,108 +3,104 @@ import os
 import re
 import random
 
-from data.weapons import *
-#The most imfamous of Fire Emblem Gameplay Elements returns as a function!
+# Data imports, these are all the base classes that are used in the game proper,
+# the respective files also hold all of the data for all of their item 
+# e.g. data/weapons.py also has the array that holds all of the different weapons in the game 
+from lib.weapons import *
+from lib.classes import *
+from lib.characterGrowth import *
+
+## NOTE: The number of classes and varsr I can't name what I want to, e.g. class, str, def, etc. 
+##      Is surprisingly high... a lot of them seem to be keywords in Python
+
+
+
+# The most imfamous of Fire Emblem Gameplay Elements returns as a function!
+# This is actually how the FE7+ RNG works
 def RNG():
     return ( random.randint(0,100) + random.randint(0,100) )/2
 
-# #The class for each Weapons, the global list of weapons is located in weapons.py 
-# class Weapon:
-#     currentID = 0
-#     def __init__(self, name, might, hit, crit, weight, range):
-#         self.id = self.currentID
-#         self.currentID+=1
-
-#         self.name = name
-#         self.might = might
-#         self.hit = hit
-#         self.crit = crit
-#         self.weight = weight
-#         self.act_range = range
-
-
-#     def __repr__(self):
-#         return "< Weapon - mt:%s hit:%s crit:%s wt:%s range:%s>" % (self.might, self.hit, self.crit, self.weight, self.act_range)
-
+# This is the class for a character proper
 class Character:
-    #This is the character class for all combat characters
+    def __init__(self, characterClassObj, characterGrowthsObj, Inventory):
+        self.stats = characterClassObj
+        self.growths = characterGrowthsObj
+        self.weaponList = Inventory
+        self.weapon = Inventory.front()
 
-    ## base combat stats 
-    # int hp
-    # int level
+        # These are the three derived stats that affect combat. They are somewhat tricky to deal
+        # with in that they are constantly changing:
+        #      1) When Base stats change (level up)
+        #      2) When weapons are equipped 
+        self.avoid = self.setAvoid(self.weapon)
+        self.hit = self.setHit(self.weapon)
+        self.attackSpeed = self.calcAttackSpeed(self.weapon.weight)
 
-    # int strength
-    # int skill
-    # int speed 
-    # int luck 
-    # int defence  
-    # int resist 
-    # int move 
-    # int con 
+    def calcAttackSpeed(self, weaponWeight):
+        return self.stats.speed - weaponWeight - self.stats.con
 
-    #class values
-    maxLevel = 20
-    def __init__(self):
-        self.hp = 15 
-        self.strength = 0
-        self.skill = 0
-        self.speed = 0
-        self.luck = 0
-        self.defence = 0
-        self.resist = 0
-        self.move = 4
-        self.con = 3   
-    
-    def __init__(self, level, hp, strength, skill, speed, luck, defence, resist, con, move):
-        #base stats
-        self.level = level
-        self.hp = hp 
-        self.strength = strength
-        self.skill = skill
-        self.speed = speed
-        self.luck = luck
-        self.defence =  defence
-        self.resist = resist
-        self.con = con
-        self.move = move
-
-
-        #derived stats
-        self.avoid = 0
-        self.hit = 0
-
-
-    def calcAttackSpeed(self, weaponWeight ):
-        return self.speed - weaponWeight - self.con
+    def setAttackSpeed(self, weapon):
+        self.attackSpeed = self.calcAttackSpeed(weapon.weight)
+        return
 
     def calcAvoid(self, weaponWeight): 
-        return self.calcAttackSpeed(weaponWeight) + self.luck
+        return self.calcAttackSpeed(weaponWeight) + self.stats.luck
      
     def setAvoid(self, weapon):
         self.avoid = self.calcAvoid(weapon.weight) 
         return
 
     def calcHit(self, baseHit):
-        return self.skill*2 + baseHit + self.luck/2 
+        return self.stats.skill*2 + baseHit + self.stats.luck/2 
 
     def setHit(self, weapon):
         self.hit = self.calcHit(weapon.hit)
         return
 
+    # Equiping a new weapon changes the weapon but also changes all the 
+    # derived stats
     def equipWeapon(self, weapon):
-        self.Weapon 
+        self.weapon = weapon
+        self.setAttackSpeed(self.weapon)
+        self.setAvoid(self.weapon)
+        self.setHit(self.weapon)
         return
 
-    def __repr__(self):
-        return "< Character - level:%s hp:%s str:%s skill:%s spd:%s luck:%s def:%s res:%s con:%s move:%s >" % (self.level , self.hp, self.strength, self.skill, self.speed, self.luck, self.defence, self.resist, self.con, self.move)
+    # At level up, we do an RNG roll against each of the characters growths
+    # to see which stats improve.
+    def levelUp():
+        self.stats.level+=1
+        #once we see what stats 
+        self.setAttackSpeed(self.weapon)
+        self.setAvoid(self.weapon)
+        self.setHit(self.weapon)
 
 
-# class         
+#Bows do not affect the Triangle Otherwise:
+# Physical: Swords > Axes > Lances > Swords
+# Magical:  Light > Darkness > Anima > Light
+def weaponTriangle( attacker_weapon, defender_weapon):
+    if attacker_weapon.weaponType == 3 or defender.weaponType == 3: # if it's bow
+        return 0
 
+    elif (attacker_weapon.weaponType - defender.weaponType) == 0:
+        return 0
 
+    elif (attacker_weapon.weaponType - defender.weaponType) == -1:
+        return 15
 
+    elif (attacker_weapon.weaponType - defender.weaponType) == -2:
+        return -15
+    
+    elif (attacker_weapon.weaponType - defender.weaponType) == 1:
+        return -15
+
+    elif (attacker_weapon.weaponType - defender.weaponType) == 2:
+        return 15
+
+#attacker and defender are both 'Character' Objects
 def combatHitResult( attacker, defender ):
-    accuracy = attacker.hit - defender.avoid
+    accuracy = attacker.hit - defender.avoid + weaponTriangle(attacker.weapon, defender.weapon)
     # if accuracy < 0:
     #     accuracy = 0
     return accuracy > RNG()
@@ -113,11 +109,12 @@ def combatHitResult( attacker, defender ):
 
 
 if __name__ == '__main__':
+    print 'filler'
     # IronSword = Weapon("iron sword", 4, 85, 0, 4, 1)
     # print IronSword
 
-    Kevin = Character(1, 16, 4, 7, 9, 0, 2, 0, 5, 5)
-    print Kevin 
+    # Kevin = Character(1, 16, 4, 7, 9, 0, 2, 0, 5, 5)
+    # print Kevin 
 
     # Kevin.setHit(IronSword)
     # print "set hitrate:" + str(Kevin.hit)
