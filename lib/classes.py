@@ -85,3 +85,36 @@ class CharacterClass:
 
     def __repr__(self):
         return "< Character Class - level:%s hp:%s str:%s skill:%s spd:%s luck:%s def:%s res:%s con:%s move:%s >" % (self.level , self.hp, self.strength, self.skill, self.speed, self.luck, self.defence, self.resist, self.con, self.move)
+
+class ClassCaps:
+    #default constructor
+    def __init__(self):
+
+
+        self.level = 20
+        self.hp = 40
+        self.strength = 20
+        self.skill = 20
+        self.speed = 20
+        self.luck = 20
+        self.defence = 20
+        self.resist = 20
+        self.move = 20
+        self.con = 20 
+    
+    #constructor
+    def __init__(self, name, level, hp, strength, magic, skill, speed, luck, defence, resist, con, move):
+        #base stats
+        self.level = level
+
+        #combat stats
+        self.hp = hp 
+        self.strength = strength
+        self.magic = magic
+        self.skill = skill
+        self.speed = speed
+        self.luck = luck
+        self.defence =  defence
+        self.resist = resist
+        self.con = con
+        self.move = move
